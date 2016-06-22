@@ -336,6 +336,7 @@ namespace Nop.Admin.Controllers
             return RedirectToAction("List");
         }
 
+        [HttpPost]
         public ActionResult ReloadList()
         {
             if (!_permissionService.Authorize(StandardPermissionProvider.ManagePlugins))

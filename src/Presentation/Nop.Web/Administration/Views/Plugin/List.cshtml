@@ -15,7 +15,15 @@
             @T("Admin.Configuration.Plugins.Local")
         </h1>
         <div class="pull-right">
-            <a href="@Url.Action("ReloadList")" class="btn bg-blue">@T("Admin.Configuration.Plugins.ReloadList")</a>
+            <a href="#" id="plugin-reload-grid" class="btn bg-blue">@T("Admin.Configuration.Plugins.ReloadList")</a>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $("#plugin-reload-grid").on("click", function(e) {
+                        $("#plugins-form").attr("action", "@Url.Action("ReloadList")");
+                        $("#plugins-form").submit();
+                    });
+                });
+            </script>
         </div>
     </div>
 
